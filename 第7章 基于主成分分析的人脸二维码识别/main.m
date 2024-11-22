@@ -2,13 +2,13 @@ clc;clear;close all;
 
 % warning off all;
 %% 载入待检测图像
-Img = imread(fullfile(pwd, 'face/01.BMP'));
+Img = imread(fullfile(pwd, 'face/02.BMP'));
 sz = size(Img);
 figure; imshow(Img, []);
 title('人脸图像');
 
 %% 构建 PCA 数据库
-Construct_PCA_DataBase();
+Construct_PCA_DataBase(10,40);
 
 %% 获取降维特征
 f = GetFaceVector(Img);
@@ -29,5 +29,4 @@ c = QrDen(m);
 
 %% 识别
 Ims = FaceRec(c, sz);
-figure; imshow(Ims, []);
-title('二维码识别人脸');
+figure; imshow(Ims, []);title('二维码识别人脸');
