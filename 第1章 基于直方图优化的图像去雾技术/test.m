@@ -4,7 +4,7 @@ clc; clear; close all;
 I = imread('MonaLisa.png');
 
 % 全局直方图处理
-res_RemoveFogByGlobalHisteq = RemoveFogByGlobalHisteq(I,0);
+res_RemoveFogByGlobalHisteq = RemoveFogByGlobalHisteq(I,1);
 
 % 局部直方图处理
 res_RemoveFogByLocalHisteq= RemoveFogByLocalHisteq(I,0);
